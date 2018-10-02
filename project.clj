@@ -9,7 +9,8 @@
                  [orchestra "2018.09.10-1"]
                  [clj-time "0.14.4"]
                  [compojure "1.6.1"]
-                 [ring/ring-defaults "0.3.2"]]
+                 [ring/ring-defaults "0.3.2"]
+                 [ring/ring-json "0.4.0"]]
   :plugins [[lein-ring "0.12.4"]
             ;; These really should be in ~/.lein/profiles.clj
             ;; but keeping them here for portability.

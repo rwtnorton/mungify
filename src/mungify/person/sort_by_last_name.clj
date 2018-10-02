@@ -1,4 +1,4 @@
-(ns mungify.person.sort-by-birthdate
+(ns mungify.person.sort-by-last-name
   (:require [mungify.person :as p]
             [clojure.spec.alpha :as spec]
             [clojure.spec.test.alpha :refer [enumerate-namespace]]
@@ -12,6 +12,6 @@
   :ret (spec/coll-of ::p/person))
 (defn sort-people
   [persons]
-  (sort-by (juxt :date-of-birth :id) persons))
+  (sort-by :last-name (comp - compare) persons))
 
 (spec.test/instrument (enumerate-namespace (ns-name *ns*)))

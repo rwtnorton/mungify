@@ -5,7 +5,23 @@ and outputs these records to `stdout`, sorted in three ways.
 
 ## Usage
 
-FIXME
+```
+  $ cat resources/sample-data-comma |lein run
+  $ cat resources/sample-data-vbar |lein run
+  $ cat resources/sample-data-space |lein run
+```
+
+## Test
+
+```
+  $ lein test
+```
+
+## Local Development
+
+```
+  $ lein cljfmt fix && bin/run-checks
+```
 
 ## License
 

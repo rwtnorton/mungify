@@ -1,4 +1,5 @@
-(ns mungify.person)
+(ns mungify.person
+  (:require [clj-time.format :as time.format]))
 
 (defrecord Person [id
                    first-name
@@ -11,5 +12,7 @@
 
 (defn new-person
   [{:keys [id first-name last-name gender favorite-color date-of-birth]
-    :as params}]
-  (map->Person params))
+    :as   params}]
+  (-> params
+      (update :date-of-birth #(if % (time.format/parse %) %))
+      map->Person))

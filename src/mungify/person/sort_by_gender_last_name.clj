@@ -53,7 +53,8 @@
 (defn sort-people
   [persons]
   (sort-by (juxt (comp classify-gender :gender)
-                 :last-name)
+                 :last-name
+                 :id)
            compare
            persons))
 

@@ -1,0 +1,8 @@
+#!/bin/bash
+set -eu
+
+lein do clean, deps, test || exit 1
+lein eastwood || exit 1
+lein kibit || exit 1
+lein cljfmt check || exit 1
+lein cloverage

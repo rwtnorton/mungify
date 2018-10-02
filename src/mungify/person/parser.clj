@@ -14,6 +14,6 @@
   (if-not s
     p/EMPTY
     (let [tokens (str/split s *sep-regex*)]
-      (if (not= (count tokens) (count *fields*))
+      (if-not (= (count tokens) (count *fields*))
         p/EMPTY
-        (p/new-person (zipmap *fields* tokens))))))
+        (p/new-person (assoc (zipmap *fields* tokens) :id p/*default-id*))))))

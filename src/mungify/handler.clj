@@ -44,9 +44,9 @@
 (defroutes app-routes
   (GET "/" [] "Hello World")
   (POST "/records" request add-person)
-  (GET "/records/gender" [] (gln.sorter/sort-people @people))
-  (GET "/records/birthdate" [] (bd.sorter/sort-people @people))
-  (GET "/records/name" [] (ln.sorter/sort-people @people))
+  (GET "/records/gender" [] {:body (gln.sorter/sort-people @people)})
+  (GET "/records/birthdate" [] {:body (bd.sorter/sort-people @people)})
+  (GET "/records/name" [] {:body (ln.sorter/sort-people @people)})
   (route/not-found "Not Found"))
 
 (def app
